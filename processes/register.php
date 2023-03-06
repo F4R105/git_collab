@@ -37,3 +37,6 @@ function registration($dbConnect, $user_name, $password, $c_password)
 
     header("location: ../pages/register.html?message=$message");
 }
+// Hapa npo branch ingine, nacomit
+// ila push haiwezekani kwa branch za local
+// nimecreate kwa command [branch branch registrations]
