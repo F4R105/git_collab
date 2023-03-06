@@ -1,7 +1,7 @@
 <?php
 require_once("./db.php");
 
-function regitration($dbConnect, $user_name, $password, $c_password)
+function registration($dbConnect, $user_name, $password, $c_password)
 {
     if ($dbConnect && $user_name && $password && $c_password) {
         if ($password == $c_password) {
