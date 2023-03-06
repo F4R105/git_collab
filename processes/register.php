@@ -1,6 +1,6 @@
 <?php
 require_once("./db.php");
-
+// 
 function registration($dbConnect, $user_name, $password, $c_password)
 {
     if ($dbConnect && $user_name && $password && $c_password) {
