@@ -19,7 +19,8 @@ function registration($dbConnect, $user_name, $password, $c_password)
                     $insert_query_execution = mysqli_query($dbConnect, $insert_query);
                     if ($insert_query_execution) {
                         $note = "Account created succesfully, log in to continue!";
-                        header("location: ./login.php?msg=$note");
+                        header("location: ../pages/login.html?msg=$note");
+                        exit;
                     }
                 } else {
                     $message = "This username is not available!";
