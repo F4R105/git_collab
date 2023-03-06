@@ -24,10 +24,10 @@ function regitration($dbConnect, $user_name, $password, $c_password)
                 $message = "Oops! Something wen't wrong!";
             }
         } else {
-            $message = "Passwords dont't match!";
+            $message = "Passwords don't match!";
         }
     } else {
-        $message = "Please provide all creedentials!";
+        $message = "Please provide all credentials!";
     }
 
     return $message;
