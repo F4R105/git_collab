@@ -1,0 +1,146 @@
+/* GENERAL STYLES */
+/* applies to all pages */
+
+:root {
+    --primary-color: blue;
+    --secondary-color: green;
+    --navbar-height: 60px;
+    --foooter-height: 60px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aquamarine;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+a, ul {
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+/* GLOBAL SPECIFIC STYLES */
+/* applies nav, main, footer and containers of all pages */
+
+.container {
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    /* outline: 2px solid red; */
+}
+
+/* NAVBAR STYLES */
+nav {
+    position: fixed;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: black;
+    color: white;
+}
+
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav #logo a{
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    nav #logo a:hover{
+        color: yellow;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li a{
+        display: block;
+        text-align: center;
+        padding: 1em;
+        width: 100px;
+    }
+
+    nav ul li a.active {
+        border-bottom: 2px solid grey;
+    }
+
+    nav ul li a:hover{
+        background-color: grey;
+    }
+
+/* MAIN STYLES */
+main {
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+    padding-bottom: 2em;
+}
+
+/* FOOTER STYLES */
+footer {
+    width: 100%;
+    min-height: var(--foooter-height);
+    background-color: black;
+    color: grey;
+}
+
+    footer .container {
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+    }
+
+    footer p {}
+
+    footer ul {
+        display: flex;
+        /* flex-direction: column; */
+    }
+
+/* PAGES STYLES */
+
+/* INDEX */
+section#hero {
+    height: 70vh;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section#hero h1 {
+    font-size: 2rem;
+}
+
+section#hero a {
+    padding: 1em 3em;
+    background-color: green;
+    border-radius: 3px;
+}
+
+section#hero a:hover {
+    background-color: blue;
+}
