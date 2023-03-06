@@ -28,21 +28,21 @@ function handleLogin($email, $password)
                 $pass = $data['password'];
                 if (password_verify($password, $pass)) {
                     //direct user to its account
-                    header("location:../pages/user_account.html");
+                    header("location:../pages/user_account.php");
                 } else {
                     $msg =  "sorry you enter wrong credential repeate again please";
-                    header("location:../pages/login.html?msg=$msg");
+                    header("location:../pages/login.php?msg=$msg");
                 }
             } else {
                 $msg =  "sorry you enter wrong credential repeate again please";
-                header("location:../pages/login.html?msg=$msg");
+                header("location:../pages/login.php?msg=$msg");
             }
         } else {
             echo "Some thing wrong when run your sql query";
         }
     } else {
         $msg =  "please make sure all filed is not empty";
-        header("location:../pages/login.html?msg=$msg");
+        header("location:../pages/login.php?msg=$msg");
     }
 }
 
