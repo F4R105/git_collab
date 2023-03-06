@@ -17,7 +17,7 @@ function registration($dbConnect, $user_name, $password, $c_password)
                     $insert_query_execution = mysqli_query($dbConnect, $insert_query);
                     if ($insert_query_execution) {
                         $note = "Account created succesfully, log in to continue!";
-                        header("location: ./login.php?note=$note");
+                        header("location: ./login.php?msg=$note");
                     }
                 } else {
                     $message = "This username is not available!";
@@ -32,5 +32,5 @@ function registration($dbConnect, $user_name, $password, $c_password)
         $message = "Please provide all credentials!";
     }
 
-    return $message;
+    header("location: ../pages/register.html?message=$message");
 }
