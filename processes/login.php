@@ -20,8 +20,8 @@ $data = mysqli_fetch_array($query);
 //check if runed query returned with information or not
 
 
-if (sizeof($data) != 0) {
-//if its size is not zero it means has data
+if ($data) {
+//if  fetch return true it means has data
 //lets us compaire a given data with user password
 
 
