@@ -26,7 +26,7 @@ if ($data) {
 
 
 $pass = $data['password'];
-if ($password == $pass) {
+if (password_verify($password, $pass)) {
 //direct user to its account
 header("location:../pages/user_account.html");
 } 
