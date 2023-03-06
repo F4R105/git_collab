@@ -28,6 +28,7 @@ body * {
 button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 a, ul {
@@ -37,7 +38,7 @@ a, ul {
 }
 
 /* GLOBAL SPECIFIC STYLES */
-/* applies nav, main, footer and containers of all pages */
+/* applies nav, main, footer, forms and containers of all pages */
 
 .container {
     width: 100%;
@@ -91,12 +92,86 @@ nav {
         background-color: grey;
     }
 
+    nav #user_nav {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        /* outline: 2px solid red; */
+    }
+
+    nav #user_avatar {
+        border: 1px solid grey;
+        border-radius: 50%;
+        padding: 0.4em;
+        font-size: 1.2rem;
+        pointer-events: none;
+    }
+
 /* MAIN STYLES */
 main {
     min-height: 100vh;
     padding-top: var(--navbar-height);
     padding-bottom: 2em;
 }
+
+/* FORM STYLES */
+form {
+    /* outline: 2px solid red; */
+    width: 100%;
+    max-width: 400px;
+}
+
+    form .form_header {
+        font-size: 1.5rem;
+        padding: 0.5em 0;
+    }
+
+    form .input_container {
+        /* outline: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+
+    form label {
+        font-size: 0.8rem;
+        padding-bottom: 0.2em;
+    }
+
+    form input {
+        border: none;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color: transparent;
+        font-size: 1.2rem;
+        padding: 0.5em 0.2em;
+    }
+
+    form button {
+        width: 100%;
+        border-radius: 3px;
+        font-size: 1.2rem;
+        padding: 0.5em 0.2em;
+        background-color: black;
+        color: white;
+        /* outline: 2px solid red; */
+    }
+
+    form button:hover {
+        background-color: gray;
+    }
+
+    form .feedback_container {
+        padding: 1em 0;
+    }
+
+    form .feedback_container p {
+        padding: 0.3em;
+        border-radius: 3px;
+        background-color: red;
+        color: white;
+        text-align: center;
+    }
 
 /* FOOTER STYLES */
 footer {
@@ -137,10 +212,14 @@ section#hero h1 {
 
 section#hero a {
     padding: 1em 3em;
-    background-color: green;
+    background-color: black;
+    color: white;
     border-radius: 3px;
 }
 
 section#hero a:hover {
-    background-color: blue;
+    background-color: grey;
 }
+
+/* LOGIN PAGE */
+#login_form
