@@ -1,3 +1,5 @@
+<!-- NAVBAR FOR PAGES WITHIN PAGES DIRECTORY -->
+<!-- for logged out users -->
 <nav>
     <div class="container">
         <div id="logo">

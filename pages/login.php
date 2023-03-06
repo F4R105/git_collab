@@ -27,8 +27,8 @@
                     <div>
                         <button type="submit">Login</button>
                     </div>
-                    <div class="feedback_container" style="opacity: 0">
-                        <p>Wrong email or password</p>
+                    <div class="feedback_container <?php if(isset($_GET['msg'])) echo 'show'; ?>" >
+                        <p><?php if(isset($_GET['msg'])) echo base64_decode($_GET['msg']); ?></p>
                     </div>
                     <div class="redirection">
                         <p>Don't have an account yet? <a href="./register.php" style="color: blue">Register here</a></p>
