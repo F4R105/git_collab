@@ -29,4 +29,6 @@ function regitration($dbConnect, $user_name, $password, $c_password)
     } else {
         $message = "Please provide all creedentials!";
     }
+
+    return $message;
 }
