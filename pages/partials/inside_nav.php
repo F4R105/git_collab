@@ -10,7 +10,7 @@
                 <li><a href="../processes/logout.php">Logout</a></li>
             </ul>
             <div id="user_avatar">
-                <span>Fa</span>
+                <span><?php echo substr($_SESSION['username'],0,2); ?></span>
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@
                     <div>
                         <button type="submit">Login</button>
                     </div>
-                    <div class="feedback_container <?php if(isset($_GET['msg'])) echo 'show'; ?>" >
+                    <div class="feedback_container <?php if(isset($_GET['msg'])) echo 'show'; ?>">
                         <p><?php if(isset($_GET['msg'])) echo base64_decode($_GET['msg']); ?></p>
                     </div>
                     <div class="redirection">
