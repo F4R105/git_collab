@@ -1,9 +1,6 @@
 <?php
-session_start();
-if (empty($_SESSION['username'])) {
-    header("location:./login.php");
-    die();
-}
+require_once("../processes/in.php");
+require_once("../processes/user_list.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
