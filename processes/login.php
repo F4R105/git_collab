@@ -33,10 +33,12 @@ function handleLogin($username, $password)
                     header("location:../pages/user_account.php");
                 } else {
                     $msg =  "sorry you enter wrong credential repeate again please";
+                    $msg = base64_encode($msg);
                     header("location:../pages/login.php?msg=$msg");
                 }
             } else {
                 $msg =  "sorry you enter wrong credential repeate again please";
+                $msg = base64_encode($msg);
                 header("location:../pages/login.php?msg=$msg");
             }
         } else {
@@ -44,6 +46,7 @@ function handleLogin($username, $password)
         }
     } else {
         $msg =  "please make sure all filed is not empty";
+        $msg = base64_encode($msg);
         header("location:../pages/login.php?msg=$msg");
     }
 }
