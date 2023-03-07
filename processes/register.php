@@ -18,8 +18,10 @@ function registration($dbConnect, $user_name, $password, $c_password)
                     $insert_query = "INSERT INTO users (user_name, password) VALUES ('$user_name', '$c_password')";
                     $insert_query_execution = mysqli_query($dbConnect, $insert_query);
                     if ($insert_query_execution) {
-                        $note = base64_encode("Account created succesfully, log in to continue!");
-                        header("location: ../pages/login.php?msg=$note");
+                        session_start();
+                        $_SESSION['username'] = $user_name;
+                        $message = base64_encode("Account created succesfully, welcome!");
+                        header("location: ../pages/user_account.php?msg=$message");
                         exit;
                     }
                 } else {
@@ -35,5 +37,5 @@ function registration($dbConnect, $user_name, $password, $c_password)
         $message = base64_encode("Please provide all credentials!");
     }
 
-    header("location: ../pages/register.php?message=$message");
+    header("location: ../pages/register.php?msg=$message");
 }
