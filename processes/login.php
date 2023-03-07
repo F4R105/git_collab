@@ -28,6 +28,8 @@ function handleLogin($username, $password)
                 $pass = $data['password'];
                 if (password_verify($password, $pass)) {
                     //direct user to its account
+                    session_start();
+                    $_SESSION['username'] = $username;
                     header("location:../pages/user_account.php");
                 } else {
                     $msg =  "sorry you enter wrong credential repeate again please";

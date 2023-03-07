@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION['username'])) {
+    header("location:./login.php");
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
