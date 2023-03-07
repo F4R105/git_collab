@@ -163,6 +163,11 @@ form {
 
     form .feedback_container {
         padding: 1em 0;
+        opacity: 0;
+    }
+
+    form .feedback_container.show {
+        opacity: 1;
     }
 
     form .feedback_container p {
@@ -222,4 +227,4 @@ section#hero a:hover {
 }
 
 /* LOGIN PAGE */
-#login_form
+/* #login_form */

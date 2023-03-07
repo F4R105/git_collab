@@ -8,17 +8,7 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div id="logo">
-                <a href="../index.html">Git collab</a>
-            </div>
-            <ul>
-                <li><a href="./login.html" class="active">Login</a></li>
-                <li><a href="./register.html">Register</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php require './partials/outside_nav.php'; ?>
     <main>
         <div class="container">
             <section>
@@ -37,35 +27,16 @@
                     <div>
                         <button type="submit">Login</button>
                     </div>
-                    <div class="feedback_container" style="opacity: 0">
-                        <p>Wrong email or password</p>
+                    <div class="feedback_container <?php if(isset($_GET['msg'])) echo 'show'; ?>" >
+                        <p><?php if(isset($_GET['msg'])) echo base64_decode($_GET['msg']); ?></p>
                     </div>
                     <div class="redirection">
-                        <p>Don't have an account yet? <a href="./register.html" style="color: blue">Register here</a></p>
+                        <p>Don't have an account yet? <a href="./register.php" style="color: blue">Register here</a></p>
                     </div>
                 </form>
             </section>
-            <section>
-                
-            </section>
-            <section>
-                
-            </section>
         </div>
     </main>
-    <footer>
-        <div class="container">
-            <p>A simple PHP project for git collab practice</p>
-            <div>
-                <h5>Collaborators</h5>
-                <ul>
-                    <a href="">Faraji</a>
-                    <a href="">Massawe</a>
-                    <a href="">Hamisi</a>
-                    <a href="">Derek</a>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <?php require './partials/footer.php'; ?>
 </body>
 </html>
