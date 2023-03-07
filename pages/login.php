@@ -27,8 +27,13 @@
                     <div>
                         <button type="submit">Login</button>
                     </div>
+<<<<<<< HEAD
                     <div class="feedback_container <?php if(isset($_GET['msg'])) echo 'show'; ?>" >
                         <p class='error-element'><?php if(isset($_GET['msg'])) echo base64_decode($_GET['msg']); ?></p>
+=======
+                    <div class="feedback_container <?php if(isset($_GET['msg'])) echo 'show'; ?>">
+                        <p><?php if(isset($_GET['msg'])) echo base64_decode($_GET['msg']); ?></p>
+>>>>>>> 0421c5719f22dd31e458527d9739fb6f7bbdaace
                     </div>
                     <div class="redirection">
                         <p>Don't have an account yet? <a href="./register.php" style="color: blue">Register here</a></p>
