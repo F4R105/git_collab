@@ -32,7 +32,7 @@
                         <button type="submit">Create account</button>
                     </div>
                     <div class="feedback_container <?php if(isset($_GET['msg'])) echo 'show'; ?>">
-                        <p class='error-element'><?php if(isset($_GET['msg'])) echo base64_decode($_GET['msg']); ?></p>
+                        <p><?php if(isset($_GET['msg'])) echo base64_decode($_GET['msg']); ?></p>
                     </div>
                     <div class="redirection">
                         <p>Already have an account? <a href="./login.php" style="color: blue">Login here</a></p>

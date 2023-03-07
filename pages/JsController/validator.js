@@ -1,6 +1,6 @@
 //Initiation of all required element
 const form = document.querySelector('form')
-const Error = document.querySelector('.error-element')
+const Error = document.querySelector('feedback_container p')
 const input = document.querySelectorAll('input')
 
 //decleration of class to handle validation
