@@ -1,5 +1,5 @@
 <?php
-require_once("./db.php");
+require_once("../processes/db.php");
 
 function get_all_users($dbConnect)
 {

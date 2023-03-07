@@ -1,5 +1,5 @@
 <?php
-require_once("../db.php");
+require_once("./db.php");
 
 registration($dbConnect, $_POST['username'], $_POST['password'], $_POST['confirm_password']);
 
