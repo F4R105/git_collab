@@ -20,8 +20,7 @@ function registration($dbConnect, $user_name, $password, $c_password)
                     if ($insert_query_execution) {
                         session_start();
                         $_SESSION['username'] = $user_name;
-                        $message = base64_encode("Account created succesfully, welcome!");
-                        header("location: ../pages/user_account.php?msg=$message");
+                        header("location: ../pages/user_account.php");
                         exit;
                     }
                 } else {
