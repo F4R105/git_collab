@@ -19,7 +19,7 @@
             </ul>
         </div>
     </nav>
-    <main>
+    <main id="index">
         <div class="container">
             <section id="hero">
                 <h1>Welcome to git collab</h1>

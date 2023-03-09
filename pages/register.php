@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php require './partials/outside_nav.php'; ?>
-    <main>
+    <main id="register">
         <div class="container">
             <section>
                 <form action="../processes/register.php" id="registration_form" method="POST">
