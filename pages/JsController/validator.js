@@ -1,6 +1,6 @@
 //Initiation of all required element
 const form = document.querySelector('form')
-const Error = document.querySelector('feedback_container p')
+const Error = document.querySelector('.feedback_container p')
 const input = document.querySelectorAll('input')
 
 //decleration of class to handle validation
@@ -9,19 +9,18 @@ constructor(form,input, errorDisplay){
     this.form = form
     this.Error = errorDisplay;
     this.inputs = input
+    this.btn = document.querySelector('button')
     this.#handleValidation()
     this.#handleError()
 }
 #handleValidation(){
-//first lets listen submision event for any form
     this.form.onsubmit = (e)=>{
-//let us disable form to submit any value first
     e.preventDefault()
-//let us listen if there is any input remained as empty
-   for(const input of this.inputs){
+    for(const input of this.inputs){
     if(input.value==""){
-//show user such input
+    this.errorElement(input,`please fill ${input.name} field then proceed`)
     input.focus()
+    this.btn.disabled = true
     return false;
     }
    }
@@ -32,14 +31,22 @@ constructor(form,input, errorDisplay){
 }
 //now let us handleError
 #handleError(){
-   this.inputs.forEach(input=>{
+    this.inputs.forEach(input=>{
     input.onkeydown = ()=>{
-     if(this.Error){
-     this.Error.style.display = 'none'
-    }
-    }
-    })    
+    this.btn.disabled ?  this.btn.disabled = false :  this.btn.disabled = true
+    input.nextElementSibling ? input.nextElementSibling.style.display = 'none' :''
+    if(this.Error ){
+    this.Error.style.display = 'none'
+   }
+}
+})    
 
+}
+errorElement(input,message){
+    const err = document.createElement('p')
+    err.className = 'field_feedback'
+    err.textContent = message;
+    input.parentElement.appendChild(err)
 }
 }
 
