@@ -33,7 +33,7 @@ constructor(form,input, errorDisplay){
 #handleError(){
     this.inputs.forEach(input=>{
     input.onkeydown = ()=>{
-    this.btn.disabled ?  this.btn.disabled = false :  this.btn.disabled = true
+    this.btn.disabled ?  this.btn.disabled = false : ''
     input.nextElementSibling ? input.nextElementSibling.style.display = 'none' :''
     if(this.Error ){
     this.Error.style.display = 'none'
