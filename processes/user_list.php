@@ -3,11 +3,16 @@ require_once("../processes/db.php");
 
 function get_all_users($dbConnect)
 {
+    $user = array();
     $select_query = "SELECT user_name FROM users";
     $select_query_execution = mysqli_query($dbConnect, $select_query);
 
-    $users = mysqli_fetch_array($select_query_execution);
-    return $users;
+    while($users = mysqli_fetch_array($select_query_execution)){
+        $user[] = $users;
+    }
+    print_r($user);
+    // use the following code to access the elements
+    // print($user[0]["user_name"]);
 }
 
 $all_users = get_all_users($dbConnect);
