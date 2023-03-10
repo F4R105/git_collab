@@ -10,7 +10,7 @@ function get_all_users($dbConnect)
     while($users = mysqli_fetch_array($select_query_execution)){
         $user[] = $users;
     }
-     return json_encode($user);
+    echo json_encode($user);
     // use the following code to access the elements
     // print($user[0]["user_name"]);
 }
