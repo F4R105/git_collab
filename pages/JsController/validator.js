@@ -12,13 +12,14 @@ constructor(form,input, errorDisplay){
     this.btn = document.querySelector('button')
     this.#handleValidation()
     this.#handleError()
+    // this.#registrationHandler()
 }
 #handleValidation(){
     this.form.onsubmit = (e)=>{
     e.preventDefault()
     for(const input of this.inputs){
     if(input.value==""){
-    this.errorElement(input,`please fill ${input.name} field then proceed`)
+    this.errorElement(`please fill ${input.name} field then proceed`)
     input.focus()
     this.btn.disabled = true
     return false;
@@ -34,7 +35,6 @@ constructor(form,input, errorDisplay){
     this.inputs.forEach(input=>{
     input.onkeydown = ()=>{
     this.btn.disabled ?  this.btn.disabled = false : ''
-    input.nextElementSibling ? input.nextElementSibling.style.display = 'none' :''
     if(this.Error ){
     this.Error.style.display = 'none'
    }
@@ -42,12 +42,29 @@ constructor(form,input, errorDisplay){
 })    
 
 }
-errorElement(input,message){
-    const err = document.createElement('p')
-    err.className = 'field_feedback'
-    err.textContent = message;
-    input.parentElement.appendChild(err)
+errorElement(message){
+   this.Error.parentElement.classList.add('show')
+   this.Error.textContent = message
+   this.Error.style.display = 'block'
 }
+
+#registrationHandler(){
+if(this.form.id=="registration_form"){
+    this.form.username.onkeydown = async ()=>{
+    //   setTimeout(async ()=>{
+    const response = await fetch('../processes/user_list.php')
+    const json = await response.json()
+    json.forEach(({user_name})=>{
+    if(this.form.username.value.toLowerCase()==user_name.toLowerCase()){
+    this.errorElement("sorry such username is already taken by another user")
+    }
+    })
+   
+    // },2000)
+    }
+    }
+}
+  
 }
 
 new Validator(form, input, Error )
