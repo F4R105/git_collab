@@ -11,6 +11,13 @@
             </ul>
             <div id="user_avatar">
                 <span><?php echo substr($_SESSION['username'],0,2); ?></span>
+                <div id="dropdown">
+                    <a href="#">New blog</a>
+                    <a href="#">Authors</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">Settings</a>
+                    <a href="../processes/logout.php">Logout</a>
+                </div>
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 <?php
 require_once("../processes/in.php");
-require_once("../processes/user_list.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,29 +15,89 @@ require_once("../processes/user_list.php")
     <main id="user_main">
         <div class="container">
             <section id="user_dashboard">
-                <h1>User dashboard</h1>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+                <div id="header">
+                    <h1>Dashboard</h1>
+                    <div id="information">
+                        <div class="info no_of_blogs">
+                            Number of blogs: <span>52</span>
+                        </div>
+                        <div class="info no_of_blogs">
+                            Number of followers: <span>10</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                </div>
-                <div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+
+                <div id="blogs_container">
+                    <div class="blog">
+                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
+                        <div class="blog_retension">
+                            <div class="info number_of_likes">
+                                Number of Likes: <span>150</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+                        <div class="blog_buttons">
+                            <button class="deleteBtn">Delete</button>
+                            <button class="editBtn">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
+                        <div class="blog_retension">
+                            <div class="info number_of_likes">
+                                Number of Likes: <span>150</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+                        <div class="blog_buttons">
+                            <button class="deleteBtn">Delete</button>
+                            <button class="editBtn">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
+                        <div class="blog_retension">
+                            <div class="info number_of_likes">
+                                Number of Likes: <span>150</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+                        <div class="blog_buttons">
+                            <button class="deleteBtn">Delete</button>
+                            <button class="editBtn">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
+                        <div class="blog_retension">
+                            <div class="info number_of_likes">
+                                Number of Likes: <span>150</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+                        <div class="blog_buttons">
+                            <button class="deleteBtn">Delete</button>
+                            <button class="editBtn">Edit</button>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
+                        <div class="blog_retension">
+                            <div class="info number_of_likes">
+                                Number of Likes: <span>150</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+                        <div class="blog_buttons">
+                            <button class="deleteBtn">Delete</button>
+                            <button class="editBtn">Edit</button>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section id="users_list">
-                <h4>Registered users</h4>
-                <div id="users_container">
+            <section id="best_authors_list">
+                <h4>Best authors</h4>
+                <div id="authors_container">
                     <div class="user">
                         <span>Faraji</span>
                     </div>
