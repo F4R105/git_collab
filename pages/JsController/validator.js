@@ -12,7 +12,8 @@ constructor(form,input, errorDisplay){
     this.btn = document.querySelector('button')
     this.#handleValidation()
     this.#handleError()
-    this.#registrationHandler()
+    this.#fetchdata()
+    
 }
 #handleValidation(){
     this.form.onsubmit = (e)=>{
@@ -21,7 +22,8 @@ constructor(form,input, errorDisplay){
     if(input.value==""){
     this.errorElement(`please fill ${input.name} field then proceed`)
     input.focus()
-    this.btn.disabled = true
+    // this.btn.disabled = true
+
     return false;
     }
    }
@@ -33,10 +35,14 @@ constructor(form,input, errorDisplay){
 //now let us handleError
 #handleError(){
     this.inputs.forEach(input=>{
+       
     input.onkeydown = ()=>{
-    this.btn.disabled ?  this.btn.disabled = false : ''
+    if(this.inputs[0].value !="" && this.Error){
+       this.inputs[0].focus()
+    }
     if(this.Error ){
     this.Error.style.display = 'none'
+    this.btn.disabled = false
    }
 }
 })    
@@ -48,21 +54,24 @@ errorElement(message){
    this.Error.style.display = 'block'
 }
 
-#registrationHandler(){
-if(this.form.id=="registration_form"){
-    this.form.username.onkeydown = async ()=>{
-    //   setTimeout(async ()=>{
+async #fetchdata(){
     const response = await fetch('../processes/user_list.php')
-    const json = await response.json()
-    json.forEach(({user_name})=>{
-    if(this.form.username.value.toLowerCase()==user_name.toLowerCase()){
-    this.errorElement("sorry such username is already taken by another user")
-    }
-    })
-   
-    // },2000)
+    const json = await response.json() 
+    if(this.form.id=="registration_form"){
+    this.form.username.oninput = async (e)=>{
+        this.#registrationHandler(json)
     }
     }
+}
+
+#registrationHandler(datas){
+        datas.forEach(({user_name})=>{
+        if(this.form.username.value.toLowerCase()==user_name.toLowerCase()){
+        this.errorElement("sorry such username is already taken by another user")
+        this.btn.disabled = true
+        }
+        })
+
 }
   
 }
