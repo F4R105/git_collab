@@ -22,22 +22,17 @@ constructor(form,input, errorDisplay){
     if(input.value==""){
     this.errorElement(`please fill ${input.name} field then proceed`)
     input.focus()
-    // this.btn.disabled = true
-
     return false;
     }
    }
-//Then after every thing is ok let us allow form to submit the form
    this.form.submit()
  
 }
 }
-//now let us handleError
 #handleError(){
-    this.inputs.forEach(input=>{
-       
+    this.inputs.forEach(input=>{    
     input.onkeydown = ()=>{
-    if(this.inputs[0].value !="" && this.Error){
+    if(this.inputs[0].value !="" && this.Error && this.form.id=="registration_form"){
        this.inputs[0].focus()
     }
     if(this.Error ){
