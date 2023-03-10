@@ -12,7 +12,7 @@ constructor(form,input, errorDisplay){
     this.btn = document.querySelector('button')
     this.#handleValidation()
     this.#handleError()
-    // this.#registrationHandler()
+    this.#registrationHandler()
 }
 #handleValidation(){
     this.form.onsubmit = (e)=>{
