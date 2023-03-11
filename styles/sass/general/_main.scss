@@ -1,0 +1,39 @@
+/* MAIN STYLES */
+main {
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+
+    &.unscrollable_body {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    section.sticky_header_container {
+            height: 100%;
+            position: relative;
+            overflow-y: scroll; 
+            scrollbar-width: none; /* Firefox */ 
+            -ms-overflow-style: none; /* Internet Explorer 10+ */ 
+    
+        &::-webkit-scrollbar { 
+            /* WebKit */ 
+            width: 0; 
+            height: 0; 
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+        }
+    }
+
+    section #header {
+        padding: 1em;
+        background-color: black;
+        color: grey;
+        border-radius: 5px;
+    }
+
+    @import 'form';
+    @import 'blog';
+}

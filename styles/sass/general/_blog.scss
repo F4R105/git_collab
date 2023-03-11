@@ -1,0 +1,46 @@
+.blog {
+    padding: 1em;
+    width: 100%; 
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    box-shadow: 0 5px 5px rgb(0,0,0,.25);
+    border-radius: 3px;
+}
+
+.blog .blog_retension {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.blog .blog_retension .info {
+    font-style: italic;
+    color: rgb(109, 43, 43);
+}
+
+.blog .blog_buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.blog .blog_buttons button {
+    /* outline: 2px solid red; */
+    min-width: 100px;
+    padding: 0.2em;
+    font-size: 1rem;
+    border-radius: 2px;
+    border: 1px solid grey;
+}
+
+.blog .blog_buttons .deleteBtn:hover {
+    background-color: #c23c3c;
+    color: #d1d1d1;
+}
+
+.blog .blog_buttons .editBtn:hover {
+    background-color: black;
+    color: #d1d1d1;
+}

@@ -1,0 +1,69 @@
+main#user_account {
+
+    .container {
+        display: flex;
+        gap: 1em;
+        /* outline: 2px solid green; */
+    }
+
+    #user_dashboard {
+        flex: 3;
+    
+        #header{
+            #information {
+                display: flex;
+                gap: 1em;
+                flex-wrap: wrap;
+            }
+        } 
+    
+        #blogs_container {
+            padding: 1em 0.5em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+    }
+
+    #best_authors_list {
+        flex: 1;
+        border-radius: 10px;
+        height: min-content;
+        padding: 0.8em;
+        background-color: black;
+        color: grey;
+
+        a#viewAllAuthorsBtn{
+            display: block;
+            text-align: right;
+            // outline: 2px solid green;
+
+            &:hover { color: #b6b6b6;}
+        }
+
+        #authors_container {
+            padding: 1em 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+
+            a.user{
+                padding: 1em 5px;
+                background-color: #3f3f3f;
+                border-radius: 5px;
+                color: grey;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #4b4b4b;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        #best_authors_list {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+// GENERAL STYLES
+@import 'root';
+@import 'general';
+
+/* PAGES STYLES */
+// Logged out
+@import 'pages/index';
+@import 'pages/login';
+@import 'pages/register';
+
+// Logged in
+@import 'pages/user_account';
+@import 'pages/settings';
+@import 'pages/blogs';
+// @import 'pages/blog_edit';
+@import 'pages/blog_create';
+@import 'pages/authors';
+@import 'pages/author';

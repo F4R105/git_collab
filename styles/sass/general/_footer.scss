@@ -1,0 +1,72 @@
+/* FOOTER STYLES */
+footer {
+    width: 100%;
+    min-height: var(--foooter-height);
+    background-color: rgb(22, 22, 22);
+
+    display: flex;
+    flex-direction: column;
+    --footer-text-color: grey;
+    color: var(--footer-text-color);
+}
+
+    footer .container {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+    }
+
+    @media screen and (max-width: 500px) {
+        footer .container {
+            flex-direction: column;
+        }
+    }
+
+    /* footer .footer_section { */
+        /* flex: 1; */
+        /* max-width: 300px; */
+        /* outline: 2px solid red; */
+    /* } */
+
+    footer .footer_section h4{
+        padding-bottom: 0.3em;
+    }
+
+    footer .footer_section.about {
+        max-width: 350px;
+    }
+
+    footer .footer_section ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3em;
+    }
+
+    footer .footer_section.collaborators ul li a {
+        border: 1px solid var(--footer-text-color);
+        border-radius: 500px;
+        padding: 0.3em 0.8em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3em;
+        /* outline: 2px solid red; */
+    }
+
+    footer .footer_section.collaborators ul li a:hover {
+        box-shadow: 0 0 1px 1px var(--footer-text-color);
+    }
+
+    footer .footer_section.collaborators ul li a span { font-size: 0.8rem;}
+
+    footer .icon { width: 20px; fill: var(--footer-text-color)}
+
+    footer #copyright {
+        background-color: black;
+        text-align: center;
+        padding: 1em;
+        color: rgb(43, 43, 43);
+        /* outline: 2px solid red; */
+    }

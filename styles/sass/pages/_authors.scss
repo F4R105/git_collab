@@ -1,0 +1,22 @@
+main#authors {
+
+    #authors_container {
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        // outline: 2px solid red;
+    
+        
+        .author {
+            border: 1px solid grey;
+            padding: 0.2em;
+            border-radius: 3px;
+        }
+
+        .author_buttons {
+            margin-top: 1em;
+        }
+    }
+
+}

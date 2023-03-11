@@ -3,19 +3,19 @@
 <nav>
     <div class="container">
         <div id="logo">
-            <a href="../index.php">Git collab</a>
+            <a href="./user_account.php">Git collab</a>
         </div>
         <div id="user_nav">
             <ul>
-                <li><a href="../processes/logout.php">Logout</a></li>
+                <li><a href="./blog_create.php">New blog</a></li>
             </ul>
             <div id="user_avatar">
                 <span><?php echo substr($_SESSION['username'],0,2); ?></span>
                 <div id="dropdown">
-                    <a href="#">New blog</a>
-                    <a href="#">Authors</a>
-                    <a href="#">Blogs</a>
-                    <a href="#">Settings</a>
+                    <a href="./user_account.php">Dashboard</a>
+                    <a href="./authors.php">Authors</a>
+                    <a href="./blogs.php">Blogs</a>
+                    <a href="./settings.php">Settings</a>
                     <a href="../processes/logout.php">Logout</a>
                 </div>
             </div>

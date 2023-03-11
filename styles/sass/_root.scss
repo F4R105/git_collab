@@ -1,0 +1,51 @@
+/* GENERAL STYLES */
+/* applies to all pages */
+
+:root {
+    --primary-color: blue;
+    --secondary-color: green;
+    --navbar-height: 60px;
+    --foooter-height: 60px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aquamarine;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 2px solid red; */
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a, ul {
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+/* GLOBAL SPECIFIC STYLES */
+/* applies nav, main, footer, forms and containers of all pages */
+
+.container {
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    /* outline: 2px solid red; */
+}

@@ -1,0 +1,68 @@
+/* FORM STYLES */
+form {
+    /* outline: 2px solid red; */
+    width: 100%;
+    max-width: 400px;
+}
+
+    form .form_header {
+        font-size: 1.5rem;
+        padding: 0.5em 0;
+    }
+
+    form .input_container {
+        /* outline: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+
+    form label {
+        font-size: 0.8rem;
+        padding-bottom: 0.2em;
+    }
+
+    form input, form textarea {
+        border: none;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color: transparent;
+        font-size: 1.2rem;
+        padding: 0.5em 0.2em;
+        font-family: inherit;
+    }
+
+    form textarea {
+        resize: vertical;
+    }
+
+    form button {
+        width: 100%;
+        border-radius: 3px;
+        font-size: 1.2rem;
+        padding: 0.5em 0.2em;
+        background-color: black;
+        color: white;
+        /* outline: 2px solid red; */
+    }
+
+    form button:hover {
+        background-color: gray;
+    }
+
+    form .feedback_container {
+        padding: 1em 0;
+        opacity: 0;
+    }
+
+    form .feedback_container.show {
+        opacity: 1;
+    }
+
+    form .feedback_container p {
+        padding: 0.3em;
+        border-radius: 3px;
+        background-color: red;
+        color: white;
+        text-align: center;
+    }
