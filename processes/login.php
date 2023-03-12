@@ -8,7 +8,7 @@ function handleLogin($username, $password)
 
     if ($username || $password) {
         //Select relevant credential from database
-        $credential = "SELECT user_id, user_name password from users WHERE user_name = '$username'";
+        $credential = "SELECT user_id, user_name, password from users WHERE user_name = '$username'";
 
         //to run sql query direct to our database
         $query = mysqli_query($dbConnect, $credential);

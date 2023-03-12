@@ -1,5 +1,5 @@
 <?php
-// require_once("../processes/in.php");
+require_once("../processes/in.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

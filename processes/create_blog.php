@@ -20,14 +20,14 @@ function create_blog($dbConnect, $heading, $blog)
         $create_query = "INSERT INTO blogs (heading, content, user_id) VALUES ('$heading', '$blog', '$user_id')";
         $create_query_execution = mysqli_query($dbConnect, $create_query);
         if ($create_query_execution) {
-            $msg = "Blog created succesfully";
-            header("location: ../pages/blog_create.php?msg=$msg");
+            $msg = base64_encode("Blog post created succesfully");
+            header("location: ../pages/user_account.php?msg=$msg");
         } else {
-            $msg = "Oops! Something wen't wrong";
+            $msg = base64_encode("Oops! Something wen't wrong");
             header("location: ../pages/blog_create.php?msg=$msg");
         }
     } else {
-        $msg = "Oops! Something wen't wrong";
+        $msg = base64_encode("Oops! Something wen't wrong");
         header("location: ../pages/blog_create.php?msg=$msg");
     }
 }
@@ -35,7 +35,7 @@ function create_blog($dbConnect, $heading, $blog)
 function validate_heading($heading)
 {
     if (strlen($heading) > 60) {
-        $msg = "The heading is too long!";
+        $msg = base64_encode("The heading is too long!");
         header("location: ../pages/blog_create.php?msg=$msg");
         die();
     } else {
@@ -46,7 +46,7 @@ function validate_heading($heading)
 function validate_blog($blog)
 {
     if (strlen($blog) > 640) {
-        $msg = "The blog post is too long!";
+        $msg = base64_encode("The blog post is too long!");
         header("location: ../pages/blog_create.php?msg=$msg");
         die();
     } else {
