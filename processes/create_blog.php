@@ -10,10 +10,13 @@ if (empty($heading) && empty($blog)) {
     die();
 }
 
+create_blog($dbConnect, $heading, $blog);
+
 function create_blog($dbConnect, $heading, $blog)
 {
     if (validate_heading($heading) && validate_blog($blog)) {
         $user_id = $_SESSION['user_id'];
+
         $create_query = "INSERT INTO blogs (heading, content, user_id) VALUES ('$heading', '$blog', '$user_id')";
         $create_query_execution = mysqli_query($dbConnect, $create_query);
         if ($create_query_execution) {

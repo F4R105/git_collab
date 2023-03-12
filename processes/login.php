@@ -8,7 +8,7 @@ function handleLogin($username, $password)
 
     if ($username || $password) {
         //Select relevant credential from database
-        $credential = "SELECT user_name, password from users WHERE user_name = '$username'";
+        $credential = "SELECT user_id, user_name password from users WHERE user_name = '$username'";
 
         //to run sql query direct to our database
         $query = mysqli_query($dbConnect, $credential);
@@ -19,18 +19,16 @@ function handleLogin($username, $password)
             $data = mysqli_fetch_array($query);
             //check if runed query returned with information or not
 
-
             if ($data) {
                 //if  fetch return true it means has data
                 //lets us compaire a given data with user password
-
 
                 $pass = $data['password'];
                 if (password_verify($password, $pass)) {
                     //direct user to its account
                     session_start();
                     $_SESSION['username'] = $username;
-                    $_SESSION['user_id'] = $data['id'];
+                    $_SESSION['user_id'] = $data['user_id'];
                     header("location:../pages/user_account.php");
                 } else {
                     $msg =  "sorry you enter wrong credential repeate again please";
