@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2023 at 04:58 PM
+-- Generation Time: Mar 12, 2023 at 03:52 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `blog_id` int(11) NOT NULL,
+  `heading` text NOT NULL,
+  `content` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -38,6 +52,13 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`blog_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -49,10 +70,26 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `blog_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD CONSTRAINT `blogs_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
