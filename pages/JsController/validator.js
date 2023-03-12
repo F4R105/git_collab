@@ -2,7 +2,7 @@
 const form = document.querySelector('form')
 const Error = document.querySelector('.feedback_container p')
 const input = document.querySelectorAll('input')
-
+console.log(Error)
 //decleration of class to handle validation
 class Validator{
 constructor(form,input, errorDisplay){
@@ -13,6 +13,7 @@ constructor(form,input, errorDisplay){
     this.#handleValidation()
     this.#handleError()
     this.#fetchdata()
+    this.isSameName = false
     
 }
 #handleValidation(){
@@ -32,7 +33,7 @@ constructor(form,input, errorDisplay){
 #handleError(){
     this.inputs.forEach(input=>{    
     input.onkeydown = ()=>{
-    if(this.inputs[0].value !="" && this.Error && this.form.id=="registration_form"){
+    if(this.isSameName && this.form.id=="registration_form"){
        this.inputs[0].focus()
     }
     if(this.Error ){
@@ -64,7 +65,9 @@ async #fetchdata(){
         if(this.form.username.value.toLowerCase()==user_name.toLowerCase()){
         this.errorElement("sorry such username is already taken by another user")
         this.btn.disabled = true
+        this.isSameName = true
         }
+        this.isSameName = false
         })
 
 }
