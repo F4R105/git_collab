@@ -30,6 +30,7 @@ function handleLogin($username, $password)
                     //direct user to its account
                     session_start();
                     $_SESSION['username'] = $username;
+                    $_SESSION['user_id'] = $data['id'];
                     header("location:../pages/user_account.php");
                 } else {
                     $msg =  "sorry you enter wrong credential repeate again please";

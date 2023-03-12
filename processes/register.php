@@ -18,10 +18,16 @@ function registration($dbConnect, $user_name, $password, $c_password)
                     $insert_query = "INSERT INTO users (user_name, password) VALUES ('$user_name', '$c_password')";
                     $insert_query_execution = mysqli_query($dbConnect, $insert_query);
                     if ($insert_query_execution) {
-                        session_start();
-                        $_SESSION['username'] = $user_name;
-                        header("location: ../pages/user_account.php");
-                        exit;
+                        $select_query = "SELECT user_name, password from users WHERE user_name = '$user_name'";
+                        $select_query_execution = mysqli_query($dbConnect, $select_query);
+                        if ($select_query_execution) {
+                            $user_data = mysqli_fetch_array($select_query_execution);
+                            session_start();
+                            $_SESSION['username'] = $user_name;
+                            $_SESSION['user_id'] = $user_data['id'];
+                            header("location: ../pages/user_account.php");
+                            exit;
+                        }
                     }
                 } else {
                     $message = base64_encode("This username is not available!");
