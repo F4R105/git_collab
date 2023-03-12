@@ -31,20 +31,20 @@ function handleLogin($username, $password)
                     $_SESSION['user_id'] = $data['user_id'];
                     header("location:../pages/user_account.php");
                 } else {
-                    $msg =  "sorry you enter wrong credential repeate again please";
+                    $msg =  "Wrong username or password!";
                     $msg = base64_encode($msg);
                     header("location:../pages/login.php?msg=$msg");
                 }
             } else {
-                $msg =  "sorry you enter wrong credential repeate again please";
+                $msg =  "Wrong username or password!";
                 $msg = base64_encode($msg);
                 header("location:../pages/login.php?msg=$msg");
             }
         } else {
-            echo "Some thing wrong when run your sql query";
+            echo "Oops, Something went wrong!";
         }
     } else {
-        $msg =  "please make sure all filed is not empty";
+        $msg =  "Please, provide the required cridentials!";
         $msg = base64_encode($msg);
         header("location:../pages/login.php?msg=$msg");
     }
