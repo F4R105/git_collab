@@ -1,0 +1,70 @@
+class Blog{
+  constructor(){
+      this.blog = document.querySelectorAll('.blog')
+      this.like = document.querySelectorAll('.likeBtn')
+      this.isLiked = false
+      this.likeColor = "red"
+      this.unLikeColor = "aquamarine"
+      this.savetoMemory()
+      this.handleLike()
+    }
+ handleLike(){
+   const liked = JSON.parse(localStorage.getItem('user')) || false
+   if(liked){
+    this.like.forEach((likedbtn, btnindex)=>{
+    liked.forEach(liked=>{
+      if(liked.btnid==btnindex){
+      likedbtn.style.backgroundColor = this.likeColor
+      likedbtn.textContent = 'Liked'
+      }
+   })
+   })
+  }
+  }
+
+  savetoMemory(){
+    this.like.forEach((likebtn, index)=>{
+       likebtn.onclick = ()=>{
+       const button = {
+        btnstatus:'isLiked',
+        btnid: index
+       }
+  
+     const userArr = JSON.parse(localStorage.getItem('user')) || []
+     if(userArr[0]!="undefined"){
+      this.isLiked = false
+      userArr.forEach(datas=>{
+      if(datas.btnid == index){
+        this.isLiked = true
+      }
+      })
+  
+      if(this.isLiked){
+      likebtn.style.backgroundColor = this.unLikeColor
+      likebtn.textContent = 'Like'
+      const memoryData = userArr.filter(data=>{
+        return data.btnid != index
+      })
+      localStorage.setItem('user',JSON.stringify(memoryData))
+      }
+      else{
+        userArr.push(button)
+        localStorage.setItem('user',JSON.stringify(userArr))
+        likebtn.style.backgroundColor = this.likeColor
+        likebtn.textContent = 'Liked'
+      }
+      
+     }
+     else{
+     userArr.push(button)
+     localStorage.setItem('user',JSON.stringify(userArr))
+     likebtn.style.backgroundColor = this.likeColor
+     likebtn.textContent = 'Liked'
+     }
+     }
+   })
+
+  }
+
+}
+new Blog()

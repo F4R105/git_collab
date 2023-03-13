@@ -2,19 +2,17 @@
 const form = document.querySelector('form')
 const Error = document.querySelector('.feedback_container p')
 const input = document.querySelectorAll('input')
-console.log(Error)
 //decleration of class to handle validation
 class Validator{
 constructor(form,input, errorDisplay){
     this.form = form
     this.Error = errorDisplay;
     this.inputs = input
+    this.isSameName = false
     this.btn = document.querySelector('button')
     this.#handleValidation()
     this.#handleError()
-    this.#fetchdata()
-    this.isSameName = false
-    
+    this.#fetchdata()    
 }
 #handleValidation(){
     this.form.onsubmit = (e)=>{
@@ -31,14 +29,16 @@ constructor(form,input, errorDisplay){
 }
 }
 #handleError(){
-    this.inputs.forEach(input=>{    
+    this.inputs.forEach(input=>{  
     input.onkeydown = ()=>{
+    console.log(this.isSameName)  
     if(this.isSameName && this.form.id=="registration_form"){
        this.inputs[0].focus()
     }
     if(this.Error ){
     this.Error.style.display = 'none'
     this.btn.disabled = false
+   
    }
 }
 })    
@@ -61,13 +61,13 @@ async #fetchdata(){
 }
 
 #registrationHandler(datas){
+       this.isSameName = false
         datas.forEach(({user_name})=>{
         if(this.form.username.value.toLowerCase()==user_name.toLowerCase()){
         this.errorElement("sorry such username is already taken by another user")
         this.btn.disabled = true
         this.isSameName = true
         }
-        this.isSameName = false
         })
 
 }
@@ -75,3 +75,13 @@ async #fetchdata(){
 }
 
 new Validator(form, input, Error )
+
+// ***********************************************************************************************************************************
+
+// ******  **       *  * *               * *     *****     *       *      **     *      * **        **    ******** *      * *   **   *
+// *       * *     *   *    *         *       *  *          *     *      *  *    *      * *  *     *  *       *    *     *    * * *  *
+// ****    *  *   *    *     *       *         * ****        *   *      * *  *   *      * *   *   * *  *      *    *    *      **  * *
+// *       *   * *     *   *         *         * *            * *      *      *  *      * *  *   *      *     *    *     *   *  *   **
+// ******  *    *      ***            * ** * *   *             *      *        * *****  * * *   *        *    *    *       *    *    *
+
+// ************************************************************************************************************************************
