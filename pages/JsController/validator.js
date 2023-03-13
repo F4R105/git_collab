@@ -31,7 +31,6 @@ constructor(form,input, errorDisplay){
 #handleError(){
     this.inputs.forEach(input=>{  
     input.onkeydown = ()=>{
-    console.log(this.isSameName)  
     if(this.isSameName && this.form.id=="registration_form"){
        this.inputs[0].focus()
     }

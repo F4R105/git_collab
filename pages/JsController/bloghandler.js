@@ -9,7 +9,7 @@ class Blog{
       this.handleLike()
     }
  handleLike(){
-   const liked = JSON.parse(localStorage.getItem('user')) || false
+   const liked = JSON.parse(localStorage.getItem('users')) || false
    if(liked){
     this.like.forEach((likedbtn, btnindex)=>{
     liked.forEach(liked=>{
@@ -17,7 +17,7 @@ class Blog{
       likedbtn.style.backgroundColor = this.likeColor
       likedbtn.textContent = 'Liked'
       }
-   })
+   }) 
    })
   }
   }
@@ -30,7 +30,7 @@ class Blog{
         btnid: index
        }
   
-     const userArr = JSON.parse(localStorage.getItem('user')) || []
+     const userArr = JSON.parse(localStorage.getItem('users')) || []
      if(userArr[0]!="undefined"){
       this.isLiked = false
       userArr.forEach(datas=>{
@@ -45,11 +45,11 @@ class Blog{
       const memoryData = userArr.filter(data=>{
         return data.btnid != index
       })
-      localStorage.setItem('user',JSON.stringify(memoryData))
+      localStorage.setItem('users',JSON.stringify(memoryData))
       }
       else{
         userArr.push(button)
-        localStorage.setItem('user',JSON.stringify(userArr))
+        localStorage.setItem('users',JSON.stringify(userArr))
         likebtn.style.backgroundColor = this.likeColor
         likebtn.textContent = 'Liked'
       }
@@ -57,7 +57,7 @@ class Blog{
      }
      else{
      userArr.push(button)
-     localStorage.setItem('user',JSON.stringify(userArr))
+     localStorage.setItem('users',JSON.stringify(userArr))
      likebtn.style.backgroundColor = this.likeColor
      likebtn.textContent = 'Liked'
      }
