@@ -20,6 +20,9 @@ require_once("../processes/in.php");
                 </div>
 
                 <div id="blogs_container">
+                    <?php
+                    require_once("../processes/blogs.php");
+                    ?>
                     <div class="blog">
                         <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
                         <div class="blog_retension">
