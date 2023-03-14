@@ -25,6 +25,49 @@ main#user_account {
             gap: 1em;
             // outline: 2px solid red;
 
+            .blog {
+                position: relative;
+            }
+
+            .blog .verify_delete {
+                position: absolute;
+                inset: 0;
+                background-color: rgba(black,.8);
+                backdrop-filter: blur(2px);
+                color: white;
+
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.2s ease-in-out;
+                transform: translateY(100%);
+
+                &.show {
+                    transform: translateY(0);
+                }
+
+                button {
+                    color: inherit;
+                    padding: 0.2em 0.5em;
+                    font-size: 1.1rem;
+                    border-radius: 2px;
+                }
+
+                button:nth-child(1):hover {
+                    background-color: #c43636;
+                }
+
+                button:nth-child(2) {
+                    background-color: #49aa49;
+                }
+
+                button:nth-child(2):hover {
+                    background-color: #3a853a;
+                }
+            }
+
             #emptyblogs {
                 // outline: 2px solid red;
                 display: flex;

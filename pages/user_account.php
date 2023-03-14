@@ -54,6 +54,13 @@
                         <!-- LOOP START -->
                         <?php while($blog = mysqli_fetch_array($fetch_blogs)){ ?>
                             <div class="blog">
+                                <div class="verify_delete show">
+                                    <p>Are you sure?</p>
+                                    <div class="verification_buttons">
+                                        <button><a href="../processes/delete_blog.php?blog_id=<?php echo $blog['blog_id']; ?>">Delete</a></button>
+                                        <button class='cancelDeleteBtn'>Cancel</button>
+                                    </div>
+                                </div>
                                 <h3><?php echo $blog['heading']; ?></h3>
                                 <div class="blog_retension">
                                     <div class="info number_of_likes">
