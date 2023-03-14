@@ -82,7 +82,7 @@
                         </div>
                     <?php } else { ?>
                         <?php while($author = mysqli_fetch_array($fetch_authors)){ ?>
-                            <a class="user" href="./author.php">
+                            <a class="user" href="./author.php?author_id=<?php echo $author['user_id']; ?>">
                                 <span><?php echo $author['user_name']; ?></span>
                             </a>
                         <?php }; ?>

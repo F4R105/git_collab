@@ -36,7 +36,7 @@ require_once("../processes/in.php");
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
                         <div class="blog_buttons">
                             <button class="likeBtn">Like</button>
-                            <button class="followAuthorBtn">Follow author</button>
+                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
                         </div>
                     </div>
                     <div class="blog">
@@ -52,7 +52,7 @@ require_once("../processes/in.php");
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
                         <div class="blog_buttons">
                             <button class="likeBtn">Like</button>
-                            <button class="followAuthorBtn">Follow author</button>
+                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
                         </div>
                     </div>
                     <div class="blog">
@@ -68,7 +68,7 @@ require_once("../processes/in.php");
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
                         <div class="blog_buttons">
                             <button class="likeBtn">Like</button>
-                            <button class="followAuthorBtn">Follow author</button>
+                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
                         </div>
                     </div>
                     <div class="blog">
@@ -84,7 +84,23 @@ require_once("../processes/in.php");
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
                         <div class="blog_buttons">
                             <button class="likeBtn">Like</button>
-                            <button class="followAuthorBtn">Follow author</button>
+                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
+                        <div class="blog_retension">
+                            <div class="info number_of_likes">
+                                Author: <span>Cyxteen</span>
+                            </div>
+                            <div class="info number_of_likes">
+                                Number of Likes: <span>150</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
+                        <div class="blog_buttons">
+                            <button class="likeBtn">Like</button>
+                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
                         </div>
                     </div>
                 </div>
