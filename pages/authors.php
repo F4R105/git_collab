@@ -36,14 +36,14 @@
                     <?php } else { ?>
                         <?php while ($author = mysqli_fetch_assoc($fetch_authors)) { ?>
                             <div class="author">
-                                <h3 class="author_name">Adeodatus</h3>
+                                <h3 class="author_name"><?php echo $author['user_name']; ?></h3>
                                 <div class="author_info">
                                     <div class="info number_of_followers">
                                         Number of followers: <span>2344</span>
                                     </div>
                                 </div>
                                 <div class="author_buttons">
-                                    <a href="./author.php" class="viewAuthorBtn">View Author</a>
+                                    <a href="./author.php?author_id=<?php echo $author['user_id']; ?>" class="viewAuthorBtn">View Author</a>
                                 </div>
                             </div>
                         <?php }; ?>
