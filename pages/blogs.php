@@ -45,8 +45,7 @@ $no_of_blogs = mysqli_num_rows($select_query_execution);
                 <div id="blogs_container">
                     <?php if($no_of_blogs == 0){ ?>
                         <div id="emptyblogs">
-                            <p>There are no blogs posted</p>
-                            <a href="./blog_create.php">Click here to create a blog</a>
+                            <p>There are no blogs posted yet</p>
                         </div>
                     <?php } else { ?>
                         <?php while ($blog_post = mysqli_fetch_assoc($select_query_execution)) { ?>
