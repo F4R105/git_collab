@@ -1,8 +1,23 @@
 <?php
 require_once("../processes/in.php");
 require_once("../processes/db.php");
+ini_set ('display_errors', 1);
+ini_set ('display_startup_errors', 1);
+error_reporting (E_ALL);
 
-$select_query = "SELECT blogs.heading, blogs.content, blogs.user_id, blogs.time, users.user_name FROM blogs JOIN users ON blogs.user_id  =  users.user_id ORDER BY blogs.time DESC";
+$user_id = $_SESSION['user_id'];
+$select_query = 
+"SELECT 
+    blogs.heading, 
+    blogs.content, 
+    blogs.user_id, 
+    blogs.time, 
+    users.user_name 
+FROM blogs 
+JOIN users 
+ON blogs.user_id = users.user_id 
+WHERE NOT users.user_id = '$user_id'
+ORDER BY blogs.time DESC";
 $select_query_execution = mysqli_query($dbConnect, $select_query);
 
 ?>
