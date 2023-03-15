@@ -23,11 +23,11 @@ function create_blog($dbConnect, $heading, $blog)
             $msg = base64_encode("Blog post created succesfully");
             header("location: ../pages/blogs.php?msg=$msg");
         } else {
-            $msg = base64_encode("Oops! Something wen't wrong");
+            $msg = base64_encode("Oops! Something went wrong");
             header("location: ../pages/blog_create.php?msg=$msg");
         }
     } else {
-        $msg = base64_encode("Oops! Something wen't wrong");
+        $msg = base64_encode("Oops! Something went wrong");
         header("location: ../pages/blog_create.php?msg=$msg");
     }
 }
