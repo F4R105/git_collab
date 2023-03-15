@@ -17,11 +17,11 @@ nav {
 
     nav #logo a{
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     nav #logo a:hover{
-        color: yellow;
+        color: var(--primary-color);
     }
 
     nav ul {
@@ -40,7 +40,7 @@ nav {
     }
 
     nav ul li a:hover{
-        background-color: grey;
+        background-color: var(--primary-color);
     }
 
     nav #user_nav {

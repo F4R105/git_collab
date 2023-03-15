@@ -10,14 +10,32 @@ main#authors {
     
         
         .author {
-            border: 1px solid grey;
-            padding: 0.2em;
+            // border: 1px solid grey;
+            // padding: 0.2em;
             border-radius: 3px;
+            box-shadow: 0 5px 5px rgb(0,0,0,.25);
+
+            .author_name {
+                // background-color: rgb(92, 92, 92);
+                color: black;
+                padding: 0.2em 0.3em;
+            }
+
+            .author_info {
+                padding: 0.2em 0.3em;
+            }
+
+            .author_buttons {
+                margin-top: 1em;
+                padding: 0.2em 0.3em;
+            }
+
+            a {
+                color: rgb(99, 81, 0);
+                &:hover {color: black}
+            }
         }
-    
-        .author_buttons {
-            margin-top: 1em;
-        }
+
 
         #emptyblogs {
             // outline: 2px solid red;

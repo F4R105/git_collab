@@ -12,7 +12,7 @@
             <div id="user_avatar">
                 <span><?php echo substr($_SESSION['username'],0,2); ?></span>
                 <div id="dropdown">
-                    <a href="./user_account.php">Dashboard</a>
+                    <a href="./user_account.php">My blogs</a>
                     <a href="./authors.php">Other Authors</a>
                     <a href="./blogs.php">Other Blogs</a>
                     <a href="./settings.php">Settings</a>

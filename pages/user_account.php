@@ -57,7 +57,7 @@
                                 <div class="verify_delete show">
                                     <p>Are you sure?</p>
                                     <div class="verification_buttons">
-                                        <button><a href="../processes/delete_blog.php?blog_id=<?php echo $blog['blog_id']; ?>">Delete</a></button>
+                                        <button class="confirmDeleteBtn"><a href="../processes/delete_blog.php?blog_id=<?php echo $blog['blog_id']; ?>">Delete</a></button>
                                         <button class='cancelDeleteBtn'>Cancel</button>
                                     </div>
                                 </div>
@@ -91,6 +91,7 @@
                         <?php while($author = mysqli_fetch_array($fetch_authors)){ ?>
                             <a class="user" href="./author.php?author_id=<?php echo $author['user_id']; ?>">
                                 <span><?php echo $author['user_name']; ?></span>
+                                <div>Followers: <span>100</span></div>
                             </a>
                         <?php }; ?>
                         <a href="./authors.php" id="viewAllAuthorsBtn">View all authors</a>

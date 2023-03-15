@@ -55,6 +55,10 @@ main#user_account {
                     border-radius: 2px;
                 }
 
+                button:nth-child(1) {
+                    background-color: #c4363628;
+                }
+
                 button:nth-child(1):hover {
                     background-color: #c43636;
                 }
@@ -126,6 +130,14 @@ main#user_account {
 
                 &:hover {
                     background-color: #4b4b4b;
+                }
+
+                &>span {
+                    font-weight: bold;
+                }
+
+                &>div {
+                    font-size: 0.8rem;
                 }
             }
         }

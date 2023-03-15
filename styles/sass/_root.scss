@@ -2,7 +2,7 @@
 /* applies to all pages */
 
 :root {
-    --primary-color: blue;
+    --primary-color: rgb(92, 201, 125);
     --secondary-color: green;
     --navbar-height: 60px;
     --foooter-height: 60px;
@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: aquamarine;
+    background-color: var(--primary-color);
 }
 
 body * {
