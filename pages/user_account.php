@@ -30,7 +30,7 @@
         <div class="container">
             <section id="user_dashboard" class="sticky_header_container">
                 <div id="header">
-                    <h1>My Dashboard</h1>
+                    <h1>My blogs</h1>
                     <div id="information">
                         <div class="info no_of_blogs">
                             Number of blogs: <span><?php echo $no_of_blogs; ?></span>
