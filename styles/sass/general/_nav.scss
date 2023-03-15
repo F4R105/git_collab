@@ -51,12 +51,22 @@ nav {
     }
 
     nav #user_avatar {
+        --avatar-size: 38px;
         border: 1px solid grey;
         border-radius: 50%;
-        padding: 0.4em;
+        width: var(--avatar-size);
+        height: var(--avatar-size);
         font-size: 1.2rem;
-        /* pointer-events: none; */
         position: relative;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: #80808042;
+        }
     }
 
     nav #user_avatar #dropdown{
