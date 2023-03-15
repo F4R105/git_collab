@@ -24,15 +24,30 @@ main#index {
 
         #hero_buttons {
             margin-top: 3em;
+            display: flex;
+            gap: 1em;
 
             a {
                 padding: 1em 3em;
-                background-color: black;
-                color: white;
                 border-radius: 3px;
+            }
+
+            a:nth-child(1) {              
+                background-color: #000000;
+                color: white;
 
                 &:hover {
-                    background-color: grey;
+                    background-color: #1f1f1f;
+                }
+            }
+
+            a:nth-child(2) {
+                outline: 2px solid black;
+                color: black;
+
+                &:hover {
+                    background-color: #1f1f1f;
+                    color: white;
                 }
             }
         }

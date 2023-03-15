@@ -25,14 +25,14 @@
                 <h1>Welcome to git collab</h1>
                 <p>Writer's favourite platform</p>
                 <div id="hero_buttons">
+                    <a href="./pages/login.php">Login</a>
                     <a href="./pages/register.php">Create account</a>
-                    <!-- <a href="./pages/register.php">Create account</a> -->
                 </div>
             </div>
         </section>
         <section id="middle">
             <div class="container">
-                <h2>Publish your experience on your own way</h2>
+                <!-- <h2>Publish your experience on your own way</h2>
                 <div>
                     <div class="info">
                         <h3>Authors</h3>
@@ -42,12 +42,27 @@
                         <h3>Blogs</h3>
                         <span>4530</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
         <section id="blogs">
             <div class="container">
                 <!-- <h1>Most liked blogs</h1> -->
+            </div>
+        </section>
+        <section id="middle">
+            <div class="container">
+                <!-- <h2>Publish your experience on your own way</h2>
+                <div>
+                    <div class="info">
+                        <h3>Authors</h3>
+                        <span>235</span>
+                    </div>
+                    <div class="info">
+                        <h3>Blogs</h3>
+                        <span>4530</span>
+                    </div>
+                </div> -->
             </div>
         </section>
         <section id="authors">
