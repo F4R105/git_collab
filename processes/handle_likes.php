@@ -18,12 +18,6 @@ function insert_likes($user_id, $blog_id, $dbConnect){
     }else {
         $create_query = "INSERT INTO `likes`(`user_id`, `blog_id`) VALUES ('$user_id','$blog_id')";
         $create_query_execution = mysqli_query($dbConnect, $create_query);
-        // if ($create_query_execution) {
-        //     $msg = base64_encode("something went wrong");
-        //     header("location: ../pages/blogs.php?msg=$msg");
-        // } else {
-        //     $msg = base64_encode("something went wrong");
-        //     header("location: ../pages/blogs.php?msg=$msg");
-        // }
+        
     }
 }
