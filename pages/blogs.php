@@ -1,5 +1,10 @@
 <?php
 require_once("../processes/in.php");
+require_once("../processes/db.php");
+
+$select_query = "SELECT blogs.heading, blogs.content, blogs.user_id, blogs.time, users.user_name FROM blogs JOIN users ON blogs.user_id  =  users.user_id ORDER BY blogs.time DESC";
+$select_query_execution = mysqli_query($dbConnect, $select_query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,89 +25,24 @@ require_once("../processes/in.php");
                 </div>
 
                 <div id="blogs_container">
-                    <?php
-                    require_once("../processes/blogs.php");
-                    ?>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Author: <span>Cyxteen</span>
+                    <?php while ($blog_post = mysqli_fetch_assoc($select_query_execution)) { ?>
+                        <div class="blog">
+                            <h3><?php echo $blog_post["heading"] ?></h3>
+                            <div class="blog_retension">
+                                <div class="info number_of_likes">
+                                    Author: <span><?php echo $blog_post["user_name"] ?></span>
+                                </div>
+                                <div class="info number_of_likes">
+                                    Number of Likes: <span>150</span>
+                                </div>
                             </div>
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="likeBtn">Like</button>
-                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Author: <span>Cyxteen</span>
-                            </div>
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
+                            <p><?php echo $blog_post["content"] ?></p>
+                            <div class="blog_buttons">
+                                <button class="likeBtn">Like</button>
+                                <button class="followAuthorBtn">Follow author</button>
                             </div>
                         </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="likeBtn">Like</button>
-                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Author: <span>Cyxteen</span>
-                            </div>
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="likeBtn">Like</button>
-                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Author: <span>Cyxteen</span>
-                            </div>
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="likeBtn">Like</button>
-                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Author: <span>Cyxteen</span>
-                            </div>
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="likeBtn">Like</button>
-                            <button class="viewAuthorBtn"><a href="./author.php?author_id=">View Author</a></button>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </section>
         </div>
