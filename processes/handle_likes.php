@@ -19,11 +19,11 @@ function insert_likes($user_id, $blog_id, $dbConnect){
         $create_query = "INSERT INTO `likes`(`user_id`, `blog_id`) VALUES ('$user_id','$blog_id')";
         $create_query_execution = mysqli_query($dbConnect, $create_query);
         // if ($create_query_execution) {
-        //     $msg = base64_encode("Blog post created succesfully");
+        //     $msg = base64_encode("something went wrong");
         //     header("location: ../pages/blogs.php?msg=$msg");
         // } else {
-        //     $msg = base64_encode("Oops! Something went wrong");
-        //     header("location: ../pages/blog_create.php?msg=$msg");
+        //     $msg = base64_encode("something went wrong");
+        //     header("location: ../pages/blogs.php?msg=$msg");
         // }
     }
 }
