@@ -20,12 +20,41 @@
         </div>
     </nav>
     <main id="index">
-        <div class="container">
-            <section id="hero">
+        <section id="hero">
+            <div class="container">
                 <h1>Welcome to git collab</h1>
-                <a href="./pages/register.php">Create account</a>
-            </section>
-        </div>
+                <p>Writer's favourite platform</p>
+                <div id="hero_buttons">
+                    <a href="./pages/register.php">Create account</a>
+                    <!-- <a href="./pages/register.php">Create account</a> -->
+                </div>
+            </div>
+        </section>
+        <section id="middle">
+            <div class="container">
+                <h2>Publish your experience on your own way</h2>
+                <div>
+                    <div class="info">
+                        <h3>Authors</h3>
+                        <span>235</span>
+                    </div>
+                    <div class="info">
+                        <h3>Blogs</h3>
+                        <span>4530</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="blogs">
+            <div class="container">
+                <!-- <h1>Most liked blogs</h1> -->
+            </div>
+        </section>
+        <section id="authors">
+            <div class="container">
+                <!-- <h1>Most followed authors</h1> -->
+            </div>
+        </section>
     </main>
     <?php require './pages/partials/footer.php'; ?>
 </body>
