@@ -55,19 +55,25 @@
                 </div>
 
                 <div id="blogs_container">
-                    <?php while ($blog = mysqli_fetch_assoc($fetch_blogs)) { ?>
-                        <div class="blog">
-                            <h3><?php echo $blog['heading']; ?></h3>
-                            <div class="blog_retension">
-                                <div class="info number_of_likes">
-                                    Number of Likes: <span>150</span>
+                    <?php if($no_of_blogs == 0){ ?>
+                        <div id="emptyblogs">
+                            <p>There are no blogs posted yet</p>
+                        </div>
+                    <?php } else { ?>
+                        <?php while ($blog = mysqli_fetch_assoc($fetch_blogs)) { ?>
+                            <div class="blog">
+                                <h3><?php echo $blog['heading']; ?></h3>
+                                <div class="blog_retension">
+                                    <div class="info number_of_likes">
+                                        Number of Likes: <span>150</span>
+                                    </div>
+                                </div>
+                                <p><?php echo $blog['content']; ?></p>
+                                <div class="blog_buttons">
+                                    <button class="likeBtn">Like</button>
                                 </div>
                             </div>
-                            <p><?php echo $blog['content']; ?></p>
-                            <div class="blog_buttons">
-                                <button class="likeBtn">Like</button>
-                            </div>
-                        </div>
+                        <?php }; ?>
                     <?php }; ?>
                 </div>
             </section>
