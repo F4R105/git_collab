@@ -6,6 +6,7 @@ ini_set ('display_startup_errors', 1);
 error_reporting (E_ALL);
 
 $user_id = $_SESSION['user_id'];
+
 $select_query = 
 "SELECT 
     blogs.heading, 
@@ -18,7 +19,9 @@ JOIN users
 ON blogs.user_id = users.user_id 
 WHERE NOT users.user_id = '$user_id'
 ORDER BY blogs.time DESC";
+
 $select_query_execution = mysqli_query($dbConnect, $select_query);
+$no_of_blogs = mysqli_num_rows($select_query_execution);
 
 ?>
 <!DOCTYPE html>
@@ -40,24 +43,31 @@ $select_query_execution = mysqli_query($dbConnect, $select_query);
                 </div>
 
                 <div id="blogs_container">
-                    <?php while ($blog_post = mysqli_fetch_assoc($select_query_execution)) { ?>
-                        <div class="blog">
-                            <h3><?php echo $blog_post["heading"] ?></h3>
-                            <div class="blog_retension">
-                                <div class="info number_of_likes">
-                                    Author: <span><?php echo $blog_post["user_name"] ?></span>
-                                </div>
-                                <div class="info number_of_likes">
-                                    Number of Likes: <span>150</span>
-                                </div>
-                            </div>
-                            <p><?php echo $blog_post["content"] ?></p>
-                            <div class="blog_buttons">
-                                <button class="likeBtn">Like</button>
-                                <button class="followAuthorBtn">Follow author</button>
-                            </div>
+                    <?php if($no_of_blogs == 0){ ?>
+                        <div id="emptyblogs">
+                            <p>There are no blogs posted</p>
+                            <a href="./blog_create.php">Click here to create a blog</a>
                         </div>
-                    <?php } ?>
+                    <?php } else { ?>
+                        <?php while ($blog_post = mysqli_fetch_assoc($select_query_execution)) { ?>
+                            <div class="blog">
+                                <h3><?php echo $blog_post["heading"] ?></h3>
+                                <div class="blog_retension">
+                                    <div class="info number_of_likes">
+                                        Author: <span><?php echo $blog_post["user_name"] ?></span>
+                                    </div>
+                                    <div class="info number_of_likes">
+                                        Number of Likes: <span>150</span>
+                                    </div>
+                                </div>
+                                <p><?php echo $blog_post["content"] ?></p>
+                                <div class="blog_buttons">
+                                    <button class="likeBtn">Like</button>
+                                    <button class="followAuthorBtn">Follow author</button>
+                                </div>
+                            </div>
+                        <?php }; ?>
+                    <?php }; ?>
                 </div>
             </section>
         </div>
