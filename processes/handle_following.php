@@ -20,9 +20,9 @@ function insert_following($user_id, $author_id, $dbConnect){
         $create_query_execution = mysqli_query($dbConnect, $create_query);
 
         if ($create_query_execution) {
-            print("done");
+            return "True";
         }else {
-            print("not done");
+            return "False";
         }
         
     }
