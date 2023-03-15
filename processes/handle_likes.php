@@ -8,16 +8,18 @@ require_once("./db.php");
 
 // get the user's id
 $user_id = $_SESSION['user_id'];
-print($user_id);
-insert_likes($user_id, $blog_id, $dbConnect);
+
+// function call
+insert_likes($user_id, 6, $dbConnect);
+
 function insert_likes($user_id, $blog_id, $dbConnect){
     // checks if the blog_id and the user_id are the same
-    if ($user_id == $blog_id) {
-        $msg = base64_encode("you can't like your own post!");
-        header("location: ../pages/blogs.php?msg=$msg");
+    $create_query = "INSERT INTO `likes`(`user_id`, `blog_id`) VALUES ($user_id,$blog_id)";
+    $create_query_execution = mysqli_query($dbConnect, $create_query);
+
+    if ($create_query_execution) {
+        print("done");
     }else {
-        $create_query = "INSERT INTO `likes`(`user_id`, `blog_id`) VALUES ('$user_id','$blog_id')";
-        $create_query_execution = mysqli_query($dbConnect, $create_query);
-        
+        print("not done");
     }
 }
