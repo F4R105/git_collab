@@ -55,4 +55,5 @@ require_once("../processes/in.php");
         </div>
     </main>
 </body>
+<script src="./JsController/bloghandler.js"></script>
 </html>

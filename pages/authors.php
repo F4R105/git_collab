@@ -53,4 +53,5 @@
         </div>
     </main>
 </body>
+<script src="./JsController/bloghandler.js"></script>
 </html>
