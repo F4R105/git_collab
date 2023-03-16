@@ -2,11 +2,13 @@ class Blog{
   constructor(){
       this.blog = document.querySelectorAll('.blog')
       this.like = document.querySelectorAll('.likeBtn')
+      this.avater = document.querySelector('#user_avatar')
       this.isLiked = false
       this.likeColor = "red"
       this.unLikeColor = "aquamarine"
       this.savetoMemory()
       this.handleLike()
+      this.handleNav()
     }
  handleLike(){
    const liked = JSON.parse(localStorage.getItem('users')) || false
@@ -66,5 +68,14 @@ class Blog{
 
   }
 
+  handleNav(){
+    if(this.avater) this.avater.className = 'hide'
+   this.avater.onclick = ()=>{
+    this.avater.classList.toggle('show')
+    console.log(this.avater)
+   }
+  }
+
 }
+
 new Blog()
