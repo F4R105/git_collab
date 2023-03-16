@@ -1,6 +1,20 @@
 <?php
-require_once("../processes/in.php");
+    require_once("../processes/in.php");
+    require_once("../processes/db.php");
+    ini_set ('display_errors', 1);
+    ini_set ('display_startup_errors', 1);
+    error_reporting (E_ALL);
+
+    $user_id = $_SESSION["user_id"];
+    $query = "SELECT * FROM blogs WHERE user_id='$user_id'";
+    $fetch_blogs = mysqli_query($dbConnect, $query);
+    $no_of_blogs = mysqli_num_rows($fetch_blogs); 
+
+    $query = "SELECT * FROM users WHERE NOT user_id='$user_id' LIMIT 5";
+    $fetch_authors = mysqli_query($dbConnect, $query);
+    $no_of_authors = mysqli_num_rows($fetch_authors);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +30,10 @@ require_once("../processes/in.php");
         <div class="container">
             <section id="user_dashboard" class="sticky_header_container">
                 <div id="header">
-                    <h1>My Dashboard</h1>
+                    <h1>My blogs</h1>
                     <div id="information">
                         <div class="info no_of_blogs">
-                            Number of blogs: <span>52</span>
+                            Number of blogs: <span><?php echo $no_of_blogs; ?></span>
                         </div>
                         <div class="info no_of_blogs">
                             Number of followers: <span>10</span>
@@ -28,90 +42,63 @@ require_once("../processes/in.php");
                 </div>
 
                 <div id="blogs_container">
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
+
+                    <!-- IF START -->
+                    <?php if($no_of_blogs == 0){ ?>
+                        <div id="emptyblogs">
+                            <p>You do not have any blog</p>
+                            <a href="./blog_create.php">Click here to create a blog</a>
+                        </div>
+                    <!-- ELSE -->
+                    <?php } else { ?>
+                        <!-- LOOP START -->
+                        <?php while($blog = mysqli_fetch_array($fetch_blogs)){ ?>
+                            <div class="blog">
+                                <div class="verify_delete show">
+                                    <p>Are you sure?</p>
+                                    <div class="verification_buttons">
+                                        <button class="confirmDeleteBtn"><a href="../processes/delete_blog.php?blog_id=<?php echo $blog['blog_id']; ?>">Delete</a></button>
+                                        <button class='cancelDeleteBtn'>Cancel</button>
+                                    </div>
+                                </div>
+                                <h3><?php echo $blog['heading']; ?></h3>
+                                <div class="blog_retension">
+                                    <div class="info number_of_likes">
+                                        Number of Likes: <span>150</span>
+                                    </div>
+                                </div>
+                                <p><?php echo $blog['content']; ?></p>
+                                <div class="blog_buttons">
+                                    <button class="deleteBtn">Delete</button>
+                                    <button class="editBtn"><a href="./blog_edit.php?blog_id=<?php echo $blog['blog_id'];?>">Edit</a></button>
+                                </div>
                             </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="deleteBtn">Delete</button>
-                            <button class="editBtn">Edit</button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="deleteBtn">Delete</button>
-                            <button class="editBtn">Edit</button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="deleteBtn">Delete</button>
-                            <button class="editBtn">Edit</button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="deleteBtn">Delete</button>
-                            <button class="editBtn">Edit</button>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta numquam placeat laborum dolorem saepe. Quam.</h3>
-                        <div class="blog_retension">
-                            <div class="info number_of_likes">
-                                Number of Likes: <span>150</span>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem voluptatibus, natus, reiciendis ex dicta totam aliquid iure repellendus unde velit molestias in laborum quos. Cupiditate dolore quibusdam labore modi repudiandae animi itaque ipsam quae accusantium aut, veniam perferendis id officiis nulla suscipit eius quas aspernatur? Velit eaque eos voluptas consequuntur.</p>
-                        <div class="blog_buttons">
-                            <button class="deleteBtn">Delete</button>
-                            <button class="editBtn">Edit</button>
-                        </div>
-                    </div>
+                        <?php }; ?>
+                        <!-- LOOP END -->
+                    <?php }; ?>
+                    <!-- IF END -->
                 </div>
             </section>
             <section id="best_authors_list">
                 <h4>Best authors</h4>
                 <div id="authors_container">
-                    <a class="user" href="./author.php">
-                        <span>Faraji</span>
-                    </a>
-                    <a class="user" href="./author.php">
-                        <span>Massawe</span>
-                    </a>
-                    <a class="user" href="./author.php">
-                        <span>Hamisi</span>
-                    </a>
-                    <a class="user" href="./author.php">
-                        <span>Derek</span>
-                    </a>
+
+                    <?php if($no_of_authors == 0){ ?>
+                        <div class="emptyauthors">
+                            <span>No authors available</span>
+                        </div>
+                    <?php } else { ?>
+                        <?php while($author = mysqli_fetch_array($fetch_authors)){ ?>
+                            <a class="user" href="./author.php?author_id=<?php echo $author['user_id']; ?>">
+                                <span><?php echo $author['user_name']; ?></span>
+                                <div>Followers: <span>100</span></div>
+                            </a>
+                        <?php }; ?>
+                        <a href="./authors.php" id="viewAllAuthorsBtn">View all authors</a>
+                    <?php }; ?>
+
                 </div>
-                <a href="./authors.php" id="viewAllAuthorsBtn">View all authors</a>
+                
             </section>
         </div>
     </main>

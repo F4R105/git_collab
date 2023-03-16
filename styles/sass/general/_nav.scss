@@ -17,11 +17,11 @@ nav {
 
     nav #logo a{
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     nav #logo a:hover{
-        color: yellow;
+        color: var(--primary-color);
     }
 
     nav ul {
@@ -40,7 +40,7 @@ nav {
     }
 
     nav ul li a:hover{
-        background-color: grey;
+        background-color: var(--primary-color);
     }
 
     nav #user_nav {
@@ -51,12 +51,22 @@ nav {
     }
 
     nav #user_avatar {
+        --avatar-size: 38px;
         border: 1px solid grey;
         border-radius: 50%;
-        padding: 0.4em;
+        width: var(--avatar-size);
+        height: var(--avatar-size);
         font-size: 1.2rem;
-        /* pointer-events: none; */
         position: relative;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: #80808042;
+        }
     }
 
     nav #user_avatar #dropdown{
@@ -90,5 +100,5 @@ nav {
     }
 
     nav #user_avatar #dropdown a:hover{
-        background-color: gray;
+        background-color: var(--primary-color);
     }

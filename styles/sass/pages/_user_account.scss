@@ -19,9 +19,83 @@ main#user_account {
     
         #blogs_container {
             padding: 1em 0.5em;
+            height: 100%;
             display: flex;
             flex-direction: column;
             gap: 1em;
+            // outline: 2px solid red;
+
+            .blog {
+                position: relative;
+            }
+
+            .blog .verify_delete {
+                position: absolute;
+                inset: 0;
+                background-color: rgba(black,.8);
+                backdrop-filter: blur(2px);
+                color: white;
+
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.2s ease-in-out;
+                transform: translateY(100%);
+
+                &.show {
+                    transform: translateY(0);
+                }
+
+                button {
+                    color: inherit;
+                    padding: 0.2em 0.5em;
+                    font-size: 1.1rem;
+                    border-radius: 2px;
+                }
+
+                button:nth-child(1) {
+                    background-color: #c4363628;
+                }
+
+                button:nth-child(1):hover {
+                    background-color: #c43636;
+                }
+
+                button:nth-child(2) {
+                    background-color: #49aa49;
+                }
+
+                button:nth-child(2):hover {
+                    background-color: #3a853a;
+                }
+            }
+
+            #emptyblogs {
+                // outline: 2px solid red;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                align-items: center;
+                justify-content: center;
+                height: 60%;
+                color: rgb(83, 83, 83);
+                font-weight: bold;
+                background-color: rgba(255,255,255,.3);
+                border-radius: 5px;
+
+                a {
+                    color: rgb(100, 100, 100);
+                    background-color: black;
+                    padding: 0.2em 0.5em;
+                    border-radius: 2px;
+
+                    &:hover {
+                        background-color: rgb(31, 31, 31);
+                    }
+                }
+            }
         }
     }
 
@@ -56,6 +130,14 @@ main#user_account {
 
                 &:hover {
                     background-color: #4b4b4b;
+                }
+
+                &>span {
+                    font-weight: bold;
+                }
+
+                &>div {
+                    font-size: 0.8rem;
                 }
             }
         }
