@@ -17,11 +17,11 @@ function delete_blog($dbConnect, $blog_id)
     $delete_query_execution = mysqli_query($dbConnect, $delete_query);
 
     if ($delete_query_execution) {
-        $msg = "The post was deleted successfully!";
+        $msg = base64_encode("The post was deleted successfully!");
         header("location: ../pages/user_account.php?msg=$msg");
         die();
     } else {
-        $msg = "Something went wrong, the post deletion failed!";
+        $msg = base64_encode("Something went wrong, the post deletion failed!");
         header("location: ../pages/user_account.php?msg=$msg");
         die();
     }
