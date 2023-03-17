@@ -4,12 +4,13 @@ require_once("../processes/in.php");
 
 if (isset($_GET['blog_id'])) {
     $blog_id = $_GET['blog_id'];
+    delete_blog($dbConnect, $blog_id);
+    die();
 } else {
     header("location: ../pages/user_account.php");
     die();
 }
 
-delete_blog($dbConnect, $blog_id);
 
 function delete_blog($dbConnect, $blog_id)
 {
