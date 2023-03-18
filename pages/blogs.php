@@ -9,16 +9,20 @@ $user_id = $_SESSION['user_id'];
 
 $select_query = 
 "SELECT 
-    blogs.heading, 
-    blogs.content, 
-    blogs.user_id, 
-    blogs.time, 
-    users.user_name 
-FROM blogs 
-JOIN users 
-ON blogs.user_id = users.user_id 
-WHERE NOT users.user_id = '$user_id'
-ORDER BY blogs.time DESC";
+blogs.blog_id,
+blogs.heading,
+blogs.content,
+blogs.user_id,
+users.user_name,
+COUNT(*) as no_of_likes
+FROM blogs
+JOIN likes
+ON blogs.blog_id = likes.blog_id
+JOIN users
+ON blogs.user_id = users.user_id
+WHERE NOT users.user_id='$user_id'
+GROUP BY blog_id
+ORDER BY no_of_likes DESC";
 
 $select_query_execution = mysqli_query($dbConnect, $select_query);
 $no_of_blogs = mysqli_num_rows($select_query_execution);
@@ -56,7 +60,7 @@ $no_of_blogs = mysqli_num_rows($select_query_execution);
                                         Author: <span><?php echo $blog_post["user_name"] ?></span>
                                     </div>
                                     <div class="info number_of_likes">
-                                        Number of Likes: <span>150</span>
+                                        Number of Likes: <span><?php echo $blog_post['no_of_likes']; ?></span>
                                     </div>
                                 </div>
                                 <p><?php echo $blog_post["content"] ?></p>

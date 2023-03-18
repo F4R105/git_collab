@@ -10,7 +10,7 @@
     $fetch_blogs = mysqli_query($dbConnect, $query);
     $no_of_blogs = mysqli_num_rows($fetch_blogs); 
 
-    $query = "SELECT * FROM users WHERE NOT user_id='$user_id' LIMIT 5";
+    $query = "SELECT users.user_id, users.user_name, COUNT(*) as no_of_followers FROM users JOIN following ON users.user_id = following.author_id WHERE NOT users.user_id = '$user_id' GROUP BY following.author_id ORDER BY no_of_followers DESC LIMIT 5";
     $fetch_authors = mysqli_query($dbConnect, $query);
     $no_of_authors = mysqli_num_rows($fetch_authors);
 ?>
@@ -53,8 +53,14 @@
                     <?php } else { ?>
                         <!-- LOOP START -->
                         <?php while($blog = mysqli_fetch_array($fetch_blogs)){ ?>
+                            <?php
+                                $blog_id = $blog['blog_id'];
+                                $query = "SELECT * FROM likes WHERE blog_id='$blog_id'";
+                                $fetch_likes = mysqli_query($dbConnect, $query);
+                                $no_of_likes = mysqli_num_rows($fetch_likes);
+                            ?>
                             <div class="blog">
-                                <div class="verify_delete show">
+                                <div class="verify_delete">
                                     <p>Are you sure?</p>
                                     <div class="verification_buttons">
                                         <button class="confirmDeleteBtn"><a href="../processes/delete_blog.php?blog_id=<?php echo $blog['blog_id']; ?>">Delete</a></button>
@@ -64,7 +70,7 @@
                                 <h3><?php echo $blog['heading']; ?></h3>
                                 <div class="blog_retension">
                                     <div class="info number_of_likes">
-                                        Number of Likes: <span>150</span>
+                                        Number of Likes: <span><?php echo $no_of_likes; ?></span>
                                     </div>
                                 </div>
                                 <p><?php echo $blog['content']; ?></p>
@@ -91,7 +97,7 @@
                         <?php while($author = mysqli_fetch_array($fetch_authors)){ ?>
                             <a class="user" href="./author.php?author_id=<?php echo $author['user_id']; ?>">
                                 <span><?php echo $author['user_name']; ?></span>
-                                <div>Followers: <span>100</span></div>
+                                <div>Followers: <span><?php echo $author['no_of_followers']; ?></span></div>
                             </a>
                         <?php }; ?>
                         <a href="./authors.php" id="viewAllAuthorsBtn">View all authors</a>
